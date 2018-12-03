@@ -27,6 +27,7 @@ pipeline {
     }
   }
   post {
+    junit 'coverage/jest/junit.xml'
     success {
       script {
         previous_build = currentBuild.getPreviousBuild()
