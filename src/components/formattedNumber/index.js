@@ -1,12 +1,13 @@
 import React from 'react';
-import numeral from 'numeral';
+import { BigNumber } from 'bignumber.js';
 import { Text } from 'react-native';
 
 const FormattedNumber = ({
   val, children, type, style,
 }) => {
   const Element = type || Text;
-  const formatedNumber = numeral(val || children).format('0,0.[0000000000000]');
+  const bgNum = new BigNumber(val || children);
+  const formatedNumber = bgNum.toFormat();
   return <Element style={style}>{formatedNumber} LSK</Element>;
 };
 
