@@ -28,7 +28,7 @@ pipeline {
   }
   post {
     always {
-      junit 'coverage/jest/junit.xml'
+      junit 'coverage/clover.xml'
     }
     success {
       script {
